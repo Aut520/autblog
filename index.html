@@ -228,44 +228,6 @@ document.oncontextmenu = function (event){
 <script src="./js/clipboard.min.js"></script>
 <script src="./js/APlayer.js"></script>
 <script>
-$(function(){
-    var QRBox = $('#QRBox');
-    var MainBox = $('#MainBox');
-    var AliPayQR = '';
-    var WeChanQR = '';
-    var QQQR = "";
-
-    function showQR(QR) {
-        if (QR) {
-            MainBox.css('background-image', 'url(' + QR + ')');
-        }
-        $('#DonateText,#donateBox,#github').addClass('blur');
-        QRBox.fadeIn(300, function (argument) {
-            MainBox.addClass('showQR');
-        });
-    }
-
-    $('#donateBox>li').click(function (event) {
-        var thisID = $(this).attr('id');
-        if (thisID === 'AliPay') {
-            showQR(AliPayQR);
-        } else if (thisID === 'WeChat') {
-            showQR(WeChanQR);
-        } else if (thisID === 'QQ') {
-            showQR(QQQR);
-        }
-    });
-
-    MainBox.click(function (event) {
-        MainBox.removeClass('showQR').addClass('hideQR');
-        setTimeout(function (a) {
-            QRBox.fadeOut(300, function (argument) {
-                MainBox.removeClass('hideQR');
-            });
-            $('#DonateText,#donateBox,#github').removeClass('blur');
-        }, 600);
-    });
-
     let ap3 = new APlayer({
         element: document.getElementById('player3'),//样式1
         narrow: false,
@@ -273,10 +235,10 @@ $(function(){
         showlrc: true,
         preload: 'auto',
         music: {
-            title: '爱如火',
-            author: '那艺娜',
-            url: 'https://aut520.cn/arh.m4a'
-            pic: '/'
+            title:'爱如火',
+            author:'那艺娜',
+            url:'https://aut520.cn/arh.m4a'
+            pic:'/'
         }
     });
     ap3.init();
